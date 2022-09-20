@@ -26,6 +26,7 @@ modules:
     modules:
       - name: fio
         buildsystem: autotools
+        config-opts: [ "--disable-native" ]
         sources:
           - type: git
             url: https://github.com/axboe/fio.git
