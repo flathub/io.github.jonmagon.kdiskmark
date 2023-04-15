@@ -22,7 +22,7 @@ modules:
       - type: git
         url: https://github.com/JonMagon/KDiskMark.git
         tag: '3.1.3-standalone'
-        commit: be10fbbacb505d053f1cdb94c3cfcb917fb89900
+        commit: b19260c85aaa7c86c08b3a2bf6ed1b7d51a450ed
     modules:
       - name: fio
         buildsystem: autotools
