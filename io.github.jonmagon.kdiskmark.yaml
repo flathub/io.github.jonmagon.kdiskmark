@@ -21,8 +21,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/JonMagon/KDiskMark.git
-        tag: '3.1.2-standalone'
-        commit: bfe336cc3b538da81e5a26246dea72d0d086fe70
+        tag: '3.1.3-standalone'
+        commit: be10fbbacb505d053f1cdb94c3cfcb917fb89900
     modules:
       - name: fio
         buildsystem: autotools
@@ -30,8 +30,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/axboe/fio.git
-            tag: 'fio-3.32'
-            commit: db7fc8d864dc4fb607a0379333a0db60431bd649
+            tag: 'fio-3.34'
+            commit: ebd9b4dd690808f720712b9c1a1288ae0742f361
         modules:
           - name: libaio
             buildsystem: simple
