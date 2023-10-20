@@ -17,12 +17,12 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DROOT_EDITION=OFF
+      - -DAPPIMAGE_EDITION=OFF
     sources:
       - type: git
         url: https://github.com/JonMagon/KDiskMark.git
-        tag: '3.1.2-standalone'
-        commit: bfe336cc3b538da81e5a26246dea72d0d086fe70
+        tag: '3.1.4-standalone'
+        commit: 3b04432832d628cba188447dc989ab8d6baff72d
     modules:
       - name: fio
         buildsystem: autotools
@@ -30,8 +30,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/axboe/fio.git
-            tag: 'fio-3.32'
-            commit: db7fc8d864dc4fb607a0379333a0db60431bd649
+            tag: 'fio-3.35'
+            commit: 5a649e2dddc4d8ad163b0cf57f7cea00a2e94a33
         modules:
           - name: libaio
             buildsystem: simple
