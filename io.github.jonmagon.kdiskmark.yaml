@@ -1,6 +1,6 @@
 app-id: io.github.jonmagon.kdiskmark
 runtime: org.kde.Platform
-runtime-version: '5.15-24.08'
+runtime-version: 5.15-24.08
 sdk: org.kde.Sdk
 rename-desktop-file: kdiskmark.desktop
 rename-icon: kdiskmark
@@ -21,7 +21,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/JonMagon/KDiskMark.git
-        tag: '3.1.4-standalone'
+        tag: 3.1.4-standalone
         commit: 3b04432832d628cba188447dc989ab8d6baff72d
         x-checker-data:
           type: git
@@ -29,12 +29,12 @@ modules:
     modules:
       - name: fio
         buildsystem: autotools
-        config-opts: [ "--disable-native" ]
+        config-opts: [--disable-native]
         sources:
           - type: git
             url: https://github.com/axboe/fio.git
-            tag: 'fio-3.38'
-            commit: 5af800ca20ea18193d2262a8191ae32e14d623f8
+            tag: fio-3.39
+            commit: a6e474c9e896e4ba1eb40066a03402afb040710a
             x-checker-data:
               type: git
               tag-pattern: fio-([\d.]+)
@@ -46,7 +46,7 @@ modules:
             sources:
               - type: git
                 url: https://pagure.io/libaio.git
-                tag: 'libaio-0.3.113'
+                tag: libaio-0.3.113
                 commit: 1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448
                 x-checker-data:
                   type: git
