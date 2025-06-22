@@ -1,6 +1,6 @@
 app-id: io.github.jonmagon.kdiskmark
 runtime: org.kde.Platform
-runtime-version: 5.15-24.08
+runtime-version: 6.9
 sdk: org.kde.Sdk
 rename-desktop-file: kdiskmark.desktop
 rename-icon: kdiskmark
@@ -21,8 +21,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/JonMagon/KDiskMark.git
-        tag: 3.1.4-standalone
-        commit: 3b04432832d628cba188447dc989ab8d6baff72d
+        tag: 3.2.0-standalone
+        commit: 8feca29fc987dc8dbf80e288015cff8c1728ab6c
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)-standalone
