@@ -33,8 +33,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/axboe/fio.git
-            tag: fio-3.39
-            commit: a6e474c9e896e4ba1eb40066a03402afb040710a
+            tag: fio-3.40
+            commit: ff930c4653ae3952d6b09ab3ec89671aeabf2cbe
             x-checker-data:
               type: git
               tag-pattern: fio-([\d.]+)
