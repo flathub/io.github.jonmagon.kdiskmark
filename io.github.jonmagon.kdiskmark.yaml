@@ -1,6 +1,6 @@
 app-id: io.github.jonmagon.kdiskmark
 runtime: org.kde.Platform
-runtime-version: 6.9
+runtime-version: 6.10
 sdk: org.kde.Sdk
 rename-desktop-file: kdiskmark.desktop
 rename-icon: kdiskmark
@@ -12,7 +12,38 @@ finish-args:
   - --socket=wayland
   - --filesystem=host
   - --device=dri
+cleanup:
+  - /include
+  - /share/man
+  - '*.a'
 modules:
+
+  # Required by fio
+  - name: libaio
+    buildsystem: simple
+    build-commands:
+      - make prefix=$FLATPAK_DEST install
+    sources:
+      - type: git
+        url: https://pagure.io/libaio.git
+        tag: libaio-0.3.113
+        commit: 1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448
+        x-checker-data:
+          type: git
+          tag-pattern: libaio-([\d.]+)
+
+  - name: fio
+    buildsystem: autotools
+    config-opts: [--disable-native]
+    sources:
+      - type: git
+        url: https://github.com/axboe/fio.git
+        tag: fio-3.42
+        commit: ab77643023f5d7e3c1b71a7576a564f368bf577a
+        x-checker-data:
+          type: git
+          tag-pattern: fio-([\d.]+)
+
   - name: kdiskmark
     buildsystem: cmake-ninja
     config-opts:
@@ -26,28 +57,3 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)-standalone
-    modules:
-      - name: fio
-        buildsystem: autotools
-        config-opts: [--disable-native]
-        sources:
-          - type: git
-            url: https://github.com/axboe/fio.git
-            tag: fio-3.40
-            commit: ff930c4653ae3952d6b09ab3ec89671aeabf2cbe
-            x-checker-data:
-              type: git
-              tag-pattern: fio-([\d.]+)
-        modules:
-          - name: libaio
-            buildsystem: simple
-            build-commands:
-              - make prefix=$FLATPAK_DEST install
-            sources:
-              - type: git
-                url: https://pagure.io/libaio.git
-                tag: libaio-0.3.113
-                commit: 1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448
-                x-checker-data:
-                  type: git
-                  tag-pattern: libaio-([\d.]+)
