@@ -24,14 +24,9 @@ modules:
     build-commands:
       - make prefix=$FLATPAK_DEST install
     sources:
-      - type: git
-        url: https://pagure.io/libaio.git
-        tag: libaio-0.3.113
-        commit: 1b18bfafc6a2f7b9fa2c6be77a95afed8b7be448
-        disable-shallow-clone: true
-        x-checker-data:
-          type: git
-          tag-pattern: libaio-([\d.]+)
+      - type: archive
+        url: https://deb.debian.org/debian/pool/main/liba/libaio/libaio_0.3.113.orig.tar.gz
+        sha256: 2c44d1c5fd0d43752287c9ae1eb9c023f04ef848ea8d4aafa46e9aedb678200b
 
   - name: fio
     buildsystem: autotools
