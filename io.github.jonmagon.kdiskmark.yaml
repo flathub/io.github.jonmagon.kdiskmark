@@ -52,8 +52,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/JonMagon/KDiskMark.git
-        tag: 3.2.0-standalone
-        commit: 8feca29fc987dc8dbf80e288015cff8c1728ab6c
+        tag: 3.3.0-standalone
+        commit: 77e974b456a134d2d62ad71b5a3cf0ef222fa8fe
         x-checker-data:
           type: git
           tag-pattern: ([\d.]+)-standalone
